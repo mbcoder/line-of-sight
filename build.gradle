@@ -48,8 +48,8 @@ javafx {
 }
 
 application {
-    mainModule = "com.mycompany.app"
-    mainClass = "com.mycompany.app.App"
+    mainModule = "com.esri.samples.los"
+    mainClass = "com.esri.samples.los.App"
 }
 
 task copyNatives(type: Copy) {
