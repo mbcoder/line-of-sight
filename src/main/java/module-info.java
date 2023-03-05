@@ -14,11 +14,11 @@
  * limitations under the License.
  */
 
-module com.mycompany.app {
+module com.esri.samples.los {
   // modules required by the app
   requires com.esri.arcgisruntime;
   requires javafx.graphics;
   requires org.slf4j.nop;
 
-  exports com.mycompany.app;
+  exports com.esri.samples.los;
 }
