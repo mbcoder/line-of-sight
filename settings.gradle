@@ -1,1 +1,17 @@
 rootProject.name = 'line-of-sight'
+
+// download sample data
+def ant = new groovy.util.AntBuilder()
+
+if (!file("./samples-data").exists()) {
+    file("./samples-data/raster").mkdirs()
+    // get the raster data
+    ant.get(
+            src: "https://arcgisruntime.maps.arcgis.com/sharing/rest/content/items/db9cd9beedce4e0987c33c198c8dfb45/data",
+            dest: file("./data.zip")
+    )
+    ant.unzip(
+            src: file("./data.zip"),
+            dest: file("./samples-data/raster")
+    )
+}

@@ -24,6 +24,7 @@ import com.esri.arcgisruntime.mapping.RasterElevationSource;
 import com.esri.arcgisruntime.mapping.Surface;
 import com.esri.arcgisruntime.mapping.view.GraphicsOverlay;
 import com.esri.arcgisruntime.raster.Raster;
+import java.io.File;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.geometry.Point2D;
@@ -70,8 +71,8 @@ public class App extends Application {
 
             // add a surface for elevation queries
             surface = new Surface();
-
-            String rasterFile = "/Users/mark8487/ArcGISRuntime/local_server/Arran_10m_raster.tif";
+            String rasterFile = new File
+                (System.getProperty("data.dir"), "./samples-data/raster/Arran_10m_raster.tif").getAbsolutePath();
 
             ArrayList<String> rasterList = new ArrayList<>();
             rasterList.add(rasterFile);
