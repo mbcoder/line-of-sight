@@ -29,8 +29,21 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 import javafx.scene.paint.Color;
 
+/**
+ * A class containing static methods for performing 3D surface analysis operations.
+ */
 public class SurfaceAnalysis {
 
+  /**
+   * A method for performing a line of sight calculation using a surface
+   *
+   * @param start starting point for the line of sight calculation
+   * @param end endind point for the  line of sight calculation
+   * @param sampleDistance distance in metres between sample points along line
+   * @param graphicsOverlay the graphics overlay used to display the line of sight result
+   * @param surface the surface used for performing the 3D line of sight operation
+   * @return a boolean stating if there is a clear line of sight between the 2 points
+   */
   public static boolean lineOfSight(
       Point start,
       Point end,
@@ -108,6 +121,13 @@ public class SurfaceAnalysis {
     return losResult;
   }
 
+  /**
+   * A method to calculate the angle above or below the horizontal between 2 points
+   *
+   * @param start start point with Z value set
+   * @param end end point with Z value set
+   * @return the angle in radians
+   */
   private static double elevationAngle (Point start, Point end) {
     // diff in height
     double dh = end.getZ() - start.getZ();
@@ -121,6 +141,13 @@ public class SurfaceAnalysis {
   }
 
 
+  /**
+   * A method which returns the elevation at a given point on a surface.
+   *
+   * @param location a point which doesn't need the Z value set
+   * @param surface the surface used to work out the elevation
+   * @return the height above the globe surface of the elevation in Metres
+   */
   public static double elevationAtPoint (Point location, Surface surface) {
 
     double elevation = 0;
